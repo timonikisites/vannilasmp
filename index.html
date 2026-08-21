@@ -1,1 +1,196 @@
-no site  code.... 😢
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VanillaSMP | Сервер Майнкрафт в Radmin VPN</title>
+    <style>
+        /* Общие стили и сброс */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #121212;
+            color: #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Шапка сайта */
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #d1d5db;
+        }
+
+        /* Основной контент */
+        main {
+            max-width: 800px;
+            width: 100%;
+            margin: 40px auto;
+            padding: 0 20px;
+            flex: 1;
+        }
+
+        /* Блок с IP */
+        .ip-block {
+            background: #1e1e1e;
+            border: 2px solid #2a5298;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .ip-block h2 {
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .ip-display {
+            background: #111;
+            padding: 12px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.3rem;
+            color: #4caf50;
+            display: inline-block;
+            margin-bottom: 15px;
+            border: 1px solid #333;
+            letter-spacing: 1px;
+        }
+
+        .btn {
+            background: #2a5298;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #1e3c72;
+        }
+
+        /* Карточки информации */
+        .info-section {
+            background: #1e1e1e;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        .info-section h3 {
+            color: #2a5298;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
+        }
+
+        ol, ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        /* Подвал */
+        footer {
+            background: #111;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #777;
+            border-top: 1px solid #222;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Шапка -->
+    <header>
+        <h1>VanillaSMP</h1>
+        <p>Лучший сервер SMP на радмине! Эксклюзивные миры, RTP, и многое другое!</p>
+    </header>
+
+    <!-- Основной блок -->
+    <main>
+        
+        <!-- Блок подключения -->
+        <section class="ip-block">
+            <h2>Данные для подключения</h2>
+            <!-- ЗАМЕНИТЕ НА СВОЙ IP ИЗ RADMIN VPN -->
+            <div class="ip-display" id="server-ip">VannilaSMP - лучший SMP на лаве!</div>
+            <br>
+            <button class="btn" onclick="copyIp()">Скопировать название</button>
+        </section>
+
+        <!-- Инструкция по входу -->
+        <section class="info-section">
+            <h3>Как начать играть?</h3>
+            <ol>
+                <li>Скачайте и установите программу <strong>Radmin VPN</strong> (если еще не установлена).</li>
+                <li>В программе нажмите <strong>«Сеть» -> «Присоединиться к существующей сети»</strong>.</li>
+                <li>Выберите в списке общедоступных сетей Minecraft [русский] 5 или 15.
+                </li>
+                <li>Запустите Майнкрафт (Версия: <strong>1.21.11</strong> *укажите свою*).</li>
+                <li>Зайдите в «Сетевая игра» -> и ищите наш сервер в списке. </li>
+            </ol>
+        </section>
+
+        <!-- О сервере -->
+        <section class="info-section">
+            <h3>О нашем проекте</h3>
+            <ul>
+                <li><strong>Чистая ванилла:</strong> Никаких приватов командами, креатива у админов и лишних плагинов. Только чистый геймплей.</li>
+                <li><strong>Доверие:</strong> Все отношения между игроками строятся на честности. Гриферство строго запрещено.</li>
+                <li><strong>Стабильный онлайн:</strong> Играем часто, развиваем общие проекты и строим красивые спавны.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <!-- Подвал -->
+    <footer>
+        <p>&copy; 2026 VanillaSMP. Все права защищены. Данный сайт не связан с Mojang Studios.</p>
+    </footer>
+
+    <!-- Скрипт копирования IP -->
+    <script>
+        function copyIp() {
+            const ipText = document.getElementById('server-ip').innerText;
+            navigator.clipboard.writeText(ipText).then(() => {
+                alert('IP-адрес успешно скопирован в буфер обмена!');
+            }).catch(err => {
+                console.error('Ошибка копирования: ', err);
+            });
+        }
+    </script>
+
+</body>
+</html>
